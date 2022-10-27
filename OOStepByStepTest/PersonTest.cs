@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 
@@ -33,6 +32,19 @@ namespace OOStepByStepTest
 
             // then
             Assert.Equal("My name is Tom. I am 18 years old. I am a student.", result);
+        }
+
+        [Fact]
+        public void Should_introduce_teacher_with_name_and_age_when_introduce_give_teacher_with_name_age()
+        {
+            // given
+            var teacher = new Teacher("Amy", 30);
+
+            // when
+            var result = teacher.Introduce();
+
+            // then
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", result);
         }
     }
 }

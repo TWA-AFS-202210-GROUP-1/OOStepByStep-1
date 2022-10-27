@@ -32,19 +32,21 @@ namespace OOStepByStepTest
         [Fact]
         public void Should_get_name_age_title_and_class_when_is_a_student_if_given_name_age_title_and_class_as_student()
         {
-            var student = new Student();
-            var ooclass = new OOClass();
-            var res = ooclass.Print();
-            Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2.", res);
+            var student = new Student(name: "Tom", age: 18);
+            var ooclass = new OOClass(name: 2);
+            ooclass.AddStudent(student);
+            var res = student.Print();
+            Assert.Equal("My name is Tom.I am 18 years old.I am a student of class 2.", res);
         }
 
         [Fact]
-        public void Should_get_name_age_title_and_class_when_is_a_student_if_given_name_age_title_and_class_as_teacher()
+        public void Should_get_name_age_title_and_class_when_is_a_teacher_if_given_name_age_title_and_class_as_teacher()
         {
-            var teacher = new Teacher();
-            var ooclass = new OOClass();
-            var res = ooclass.Print();
-            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", res);
+            var teacher = new Teacher(name: "Amy", age: 30);
+            var ooclass = new OOClass(name: 2);
+            ooclass.AddOrChangeTeacher(teacher);
+            var res = teacher.Print();
+            Assert.Equal("My name is Amy.I am 30 years old.I am a teacher of class 2.", res);
         }
     }
 }

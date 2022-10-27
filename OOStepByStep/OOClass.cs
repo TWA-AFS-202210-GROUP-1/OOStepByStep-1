@@ -5,19 +5,29 @@
 
     public class OOClass
     {
-        private string teacher;
-        private string name;
-        private List<string> students;
+        private Teacher teacher;
+        private int name;
+        private List<Student> students = new List<Student>();
 
-        public OOClass(string teacher, string name, List<string> students)
+        public OOClass(int name)
         {
             this.name = name;
-            this.teacher = teacher;
-            this.students = students;
         }
 
         public OOClass()
         {
+        }
+
+        public void AddOrChangeTeacher(Teacher teacher)
+        {
+            this.teacher = teacher;
+            this.teacher.Classname = this.name;
+        }
+
+        public void AddStudent(Student student)
+        {
+            this.students.Add(student);
+            student.Classname = this.name;
         }
 
         public string Print()

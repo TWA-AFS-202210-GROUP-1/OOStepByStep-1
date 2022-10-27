@@ -1,4 +1,6 @@
-﻿using OOStepByStep;
+﻿using System.Collections.Generic;
+using OOStepByStep;
+using OOStepByStep.Person;
 using Xunit;
 
 namespace OOStepByStepTest
@@ -35,7 +37,7 @@ namespace OOStepByStepTest
         }
 
         [Fact]
-        public void Should_return_true_when_add_student_given_student_to_class()
+        public void Should_not_welcome_when_add_student_given_class_has_no_teacher()
         {
             //given
             var student = new Student("Tom", 18);
@@ -45,23 +47,42 @@ namespace OOStepByStepTest
             var result = courseClass.AddStudent(student);
 
             //then
-            Assert.True(result);
+            Assert.Equal(string.Empty, result.TeacherWelcome);
+            Assert.Equal(0, result.StudentsWelcome.Count);
         }
 
         [Fact]
-        public void Should_return_true_when_add_multi_student_given_2_student_to_class()
+        public void Should_get_teacher_welcome_when_add_student_given_class_has_teacher()
+        {
+            //given
+            var student = new Student("Tom", 18);
+            var teacher = new Teacher("Amy", 30);
+            var courseClass = new CourseClass("class 2");
+            //when
+            courseClass.AddTeacher(teacher);
+            var result = courseClass.AddStudent(student);
+
+            //then
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Tom join class 2.", result.TeacherWelcome);
+        }
+
+        [Fact]
+        public void Should_student_welcmoe_when_add_student_given_class_has_students()
         {
             //given
             var tom = new Student("Tom", 18);
             var bob = new Student("Bob", 20);
-            var courseClass = new CourseClass("Class 2");
+            var me = new Student("Xu", 25);
+            var courseClass = new CourseClass("class 2");
             //when
-
             courseClass.AddStudent(tom);
-            var result = courseClass.AddStudent(bob);
+            courseClass.AddStudent(bob);
+
+            var result = courseClass.AddStudent(me);
 
             //then
-            Assert.True(result);
+            Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2. Welcome Xu join class 2.", result.StudentsWelcome[0]);
+            Assert.Equal("My name is Bob. I am 20 years old. I am a student of class 2. Welcome Xu join class 2.", result.StudentsWelcome[1]);
         }
     }
 }

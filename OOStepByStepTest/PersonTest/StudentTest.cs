@@ -1,7 +1,8 @@
 ﻿using System.IO;
 using System.Text;
+using OOStepByStep.Person;
 
-namespace OOStepByStepTest
+namespace OOStepByStepTest.PersonTest
 {
     using OOStepByStep;
     using Xunit;

@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using OOStepByStep.Person;
 
 namespace OOStepByStep;
 
@@ -27,10 +30,15 @@ public class CourseClass
         return true;
     }
 
-    public bool AddStudent(Student student)
+    public ClassWelcome AddStudent(Student student)
     {
-        classStudents.Add(student);
         student.CourseClass = this;
-        return true;
+        var welcome = new ClassWelcome
+        {
+            TeacherWelcome = classTeacher?.Welcome(student) ?? string.Empty,
+            StudentsWelcome = classStudents.Select(classStudent => classStudent.Welcome(student)).ToList(),
+        };
+        classStudents.Add(student);
+        return welcome;
     }
 }

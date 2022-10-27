@@ -1,4 +1,6 @@
-﻿namespace OOStepByStepTest
+﻿using OOStepByStep.Person;
+
+namespace OOStepByStepTest.PersonTest
 {
     using OOStepByStep;
     using Xunit;

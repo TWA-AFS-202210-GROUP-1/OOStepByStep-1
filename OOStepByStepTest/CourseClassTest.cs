@@ -98,5 +98,20 @@ namespace OOStepByStepTest
             //then
             Assert.Equal(0, result.StudentsWelcome.Count);
         }
+
+        [Fact]
+        public void Should_not_get_student_welcome_when_add_student_already_add()
+        {
+            //given
+            var me = new Student("Xu", 25);
+            var courseClass = new CourseClass("class 2");
+            //when
+
+            courseClass.AddStudent(me);
+            var result = courseClass.AddStudent(me);
+            //then
+            Assert.Equal(0, result.StudentsWelcome.Count);
+            Assert.Equal(string.Empty, result.TeacherWelcome);
+        }
     }
 }

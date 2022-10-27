@@ -6,5 +6,11 @@ namespace OOStepByStep
     {
         public string TeacherWelcome { get; set; }
         public IList<string> StudentsWelcome { get; set; }
+
+        public ClassWelcome()
+        {
+            TeacherWelcome = string.Empty;
+            StudentsWelcome = new List<string>();
+        }
     }
 }

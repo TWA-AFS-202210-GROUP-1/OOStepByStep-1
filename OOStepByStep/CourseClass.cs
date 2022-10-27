@@ -30,6 +30,11 @@ public class CourseClass
 
     public ClassWelcome AddStudent(Student student)
     {
+        if (classStudents.Any(_ => _.Id == student.Id))
+        {
+            return new ClassWelcome();
+        }
+
         student.CourseClass = this;
         var welcome = new ClassWelcome
         {

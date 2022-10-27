@@ -11,10 +11,10 @@ namespace OOStepByStep
             this.classname = classname;
         }
 
-        public string Join(Teacher teacher)
+        public string Join(Person person)
         {
-            teacher.ClassBelong = classname;
-            return teacher.Introduce();
+            person.ClassBelong = classname;
+            return person.Introduce();
         }
     }
 }

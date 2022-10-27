@@ -17,6 +17,7 @@
 
         public string Name { get => name; set => name = value; }
         public int Age { get => age; set => age = value; }
+        public string ClassBelong { get; internal set; }
 
         public virtual string Introduce()
         {

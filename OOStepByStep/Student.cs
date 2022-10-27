@@ -11,7 +11,7 @@ namespace OOStepByStep
 
         public override string Introduce()
         {
-            return $"My name is {Name}. I am {Age} years old. I am a {profession}.";
+            return $"My name is {Name}. I am {Age} years old. I am a {profession} of {ClassBelong}.";
         }
     }
 }

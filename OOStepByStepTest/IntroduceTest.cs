@@ -24,10 +24,11 @@ namespace OOStepByStepTest
         {
             //given
             Student student = new Student(name: "Tom", age: 18);
-            string expectationIntroduction = "My name is Tom. I am 18 years old. I am a student.";
+            NewClass class2 = new NewClass(classname: "class 2");
+            string expectationIntroduction = "My name is Tom. I am 18 years old. I am a student of class 2.";
 
             //when
-            string studentIntroduction = student.Introduce();
+            string studentIntroduction = class2.Join(student);
 
             //then
             Assert.Equal(expectationIntroduction, studentIntroduction);

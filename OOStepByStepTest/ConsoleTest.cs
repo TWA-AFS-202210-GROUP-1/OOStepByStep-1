@@ -17,7 +17,7 @@ namespace OOStepByStepTest
             Console.SetOut(new StringWriter(fakeOutput));
 
             // when
-            new Class().Print();
+            new OOClass().Print();
 
             // then
             Assert.Equal("console\r\n", fakeOutput.ToString());

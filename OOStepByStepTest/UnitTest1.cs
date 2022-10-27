@@ -8,7 +8,7 @@ namespace OOStepByStepTest
         [Fact]
         public void Should_get_name_and_age_when_is_a_person_if_given_name_and_age()
         {
-            var person = new Person();
+            var person = new Person(name: "Tom", age: 21);
             var res = person.Print();
             Assert.Equal("My name is Tom.I am 21 years old.", res);
         }

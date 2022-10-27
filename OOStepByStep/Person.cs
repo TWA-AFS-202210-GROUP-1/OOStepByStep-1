@@ -17,7 +17,9 @@
 
         public virtual string Print()
         {
-            return null;
+            var name = this.name;
+            var age = this.age;
+            return $"My name is {name}.I am {age} years old.";
         }
     }
 }

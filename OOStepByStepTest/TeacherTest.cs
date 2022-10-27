@@ -19,7 +19,7 @@
         }
 
         [Fact]
-        public void Should_teacher_introduce_with_class_2_when_add_teacher_to_class_2()
+        public void Should_teacher_introduce_with_class_2_when_add_teacher_to_class_given_class_name_class_2()
         {
             //given
             var teacher = new Teacher("Amy", 30);

@@ -37,7 +37,7 @@ namespace OOStepByStepTest
         }
 
         [Fact]
-        public void Should_not_welcome_when_add_student_given_class_has_no_teacher()
+        public void Should_not_get_teacher_welcome_when_add_student_given_class_has_no_teacher()
         {
             //given
             var student = new Student("Tom", 18);
@@ -67,7 +67,7 @@ namespace OOStepByStepTest
         }
 
         [Fact]
-        public void Should_student_welcmoe_when_add_student_given_class_has_students()
+        public void Should_get_student_welcome_when_add_student_given_class_has_students()
         {
             //given
             var tom = new Student("Tom", 18);
@@ -83,6 +83,20 @@ namespace OOStepByStepTest
             //then
             Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2. Welcome Xu join class 2.", result.StudentsWelcome[0]);
             Assert.Equal("My name is Bob. I am 20 years old. I am a student of class 2. Welcome Xu join class 2.", result.StudentsWelcome[1]);
+        }
+
+        [Fact]
+        public void Should_not_get_student_welcome_when_add_student_given_class_has_no_student()
+        {
+            //given
+            var me = new Student("Xu", 25);
+            var courseClass = new CourseClass("class 2");
+            //when
+
+            var result = courseClass.AddStudent(me);
+
+            //then
+            Assert.Equal(0, result.StudentsWelcome.Count);
         }
     }
 }

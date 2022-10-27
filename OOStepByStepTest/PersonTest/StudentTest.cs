@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Text;
-using OOStepByStep.Person;
+﻿using OOStepByStep.Person;
 
 namespace OOStepByStepTest.PersonTest
 {

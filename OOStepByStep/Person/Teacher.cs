@@ -1,5 +1,3 @@
-using System;
-
 namespace OOStepByStep.Person;
 
 public class Teacher : Person

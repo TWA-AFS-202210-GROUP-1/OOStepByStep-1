@@ -9,13 +9,15 @@ namespace OOStepByStepTest
     public void Should_print_introduction_when_introduce_given_teacher_Amy_30()
     {
       // given
-      var teacher = new Teacher("Amy", 30);
+      var class2 = new ClassRoom(2);
+      var teacher = new Teacher("Amy", 30, class2);
 
       // when
+      class2.AddTeacher(teacher);
       string introduction = teacher.Introduce();
 
       // then
-      Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", introduction);
+      Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", introduction);
     }
   }
 }

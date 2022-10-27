@@ -10,9 +10,10 @@ namespace OOStepByStepTest
     {
       // given
       var class2 = new Classroom(2);
-      var student = new Student("Tom", 18, class2);
+      var student = new Student("Tom", 18);
 
       // when
+      student.JoinClass(class2);
       var introduction = student.Introduce();
 
       // then

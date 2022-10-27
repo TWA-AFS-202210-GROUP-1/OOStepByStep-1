@@ -10,11 +10,14 @@ namespace OOStepByStepTest
     {
       // given
       var class2 = new Classroom(2);
-      var teacher = new Teacher("Amy", 30, class2);
-      var oldStudent = new Student("Tom", 18, class2);
-      var newStudent = new Student("Jim", 19, class2);
+      var teacher = new Teacher("Amy", 30);
+      var oldStudent = new Student("Tom", 18);
+      var newStudent = new Student("Jim", 19);
 
       // when
+      teacher.JoinClass(class2);
+      oldStudent.JoinClass(class2);
+      newStudent.JoinClass(class2);
       class2.AddTeacher(teacher);
       class2.AddStudent(oldStudent);
       string welcomeMessage = class2.AddStudent(newStudent);

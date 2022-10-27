@@ -2,10 +2,6 @@
 {
   public class Person
   {
-    public Person()
-    {
-    }
-
     public Person(string name, int age)
     {
       Name = name;

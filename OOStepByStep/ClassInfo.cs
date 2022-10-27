@@ -6,7 +6,6 @@ namespace OOStepByStep
     {
         private List<Student> students;
         private Teacher teacher;
-        private Student newComer;
         public ClassInfo(List<Student> students, Teacher teacher)
         {
             this.students = students;

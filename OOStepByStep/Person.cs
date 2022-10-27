@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace OOStepByStep
 {
@@ -6,6 +7,7 @@ namespace OOStepByStep
     {
         private string name;
         private int age;
+        protected string MyInformation { get; set; } = string.Empty;
 
         public Person(string name, int age)
         {
@@ -15,7 +17,7 @@ namespace OOStepByStep
 
         public string Introduce()
         {
-            return $"My name is {name}. I am {age} years old.";
+            return $"My name is {name}. I am {age} years old.{MyInformation}";
         }
     }
 }

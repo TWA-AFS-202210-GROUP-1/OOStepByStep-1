@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4b1fc577_002Dda19_002D4646_002Da04f_002Db583c6b4bbea/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_introduce_student_with_name_and_age_when_introduce_give_student_with_name_age #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::A8ADF2B5-445D-4A86-8DBF-0350586E4EFC::net6.0::OOStepByStepTest.PersonTest.Should_introduce_student_with_name_and_age_when_introduce_give_student_with_name_age&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e4525473_002D275c_002D4870_002Dbd4e_002D8cab95ee8da2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_introduce_student_with_name_and_age_when_introduce_give_student_with_name_age" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::A8ADF2B5-445D-4A86-8DBF-0350586E4EFC::net6.0::OOStepByStepTest.PersonTest.Should_introduce_student_with_name_and_age_when_introduce_give_student_with_name_age&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

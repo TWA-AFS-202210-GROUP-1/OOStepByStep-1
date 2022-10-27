@@ -7,6 +7,7 @@ namespace OOStepByStep
     {
         private string name;
         private int age;
+        public CourseClass CourseClass { get; set; }
 
         public Person(string name, int age)
         {
@@ -14,15 +15,26 @@ namespace OOStepByStep
             this.age = age;
         }
 
-        public string Introduce()
+        public virtual string Introduce()
         {
-            var roleInformation = string.Empty;
-            if (this is Teacher || this is Student)
+            var introduceSuffix = string.Empty;
+            if (IsTeacherOrStudent())
             {
-                roleInformation = $" I am a {GetType().Name.ToLower()}.";
+                var role = GetType().Name.ToLower();
+                introduceSuffix = $" I am a {role}.";
+
+                if (CourseClass != null)
+                {
+                    introduceSuffix = $" I am a {role} of {CourseClass.ClassName}.";
+                }
             }
 
-            return $"My name is {name}. I am {age} years old.{roleInformation}";
+            return $"My name is {name}. I am {age} years old." + introduceSuffix;
+        }
+
+        private bool IsTeacherOrStudent()
+        {
+            return this is Teacher || this is Student;
         }
     }
 }

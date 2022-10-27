@@ -17,5 +17,20 @@
             // then
             Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", result);
         }
+
+        [Fact]
+        public void Should_teacher_introduce_with_class_2_when_add_teacher_to_class_2()
+        {
+            //given
+            var teacher = new Teacher("Amy", 30);
+            var courseClass = new CourseClass("class 2");
+            courseClass.AddTeacher(teacher);
+            //when
+
+            var result = teacher.Introduce();
+
+            //then
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", result);
+        }
     }
 }

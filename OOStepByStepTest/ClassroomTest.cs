@@ -61,5 +61,20 @@ namespace OOStepByStepTest
       // then
       Assert.Equal("My name is David. I am 32 years old. I am a teacher of class 1. Welcome Paul join class 1. My name is Jim. I am 19 years old. I am a student of class 1. Welcome Paul join class 1. My name is Tom. I am 18 years old. I am a student of class 1. Welcome Paul join class 1.", welcomeMessage);
     }
+
+    [Fact]
+    public void Should_return_empty_message_when_show_welcome_given_empty_class()
+    {
+      // given
+      var classroom = new Classroom(4);
+      var newStudent = new Student("Paul", 20);
+
+      // when
+      newStudent.JoinClass(classroom);
+      string welcomeMessage = classroom.ShowWelcome(newStudent);
+
+      // then
+      Assert.Equal(string.Empty, welcomeMessage);
+    }
   }
 }

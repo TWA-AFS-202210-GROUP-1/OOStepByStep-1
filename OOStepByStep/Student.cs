@@ -2,13 +2,21 @@
 {
     public class Student : Person
     {
+        private int classNum;
         public Student(string name, int age) : base(name, age)
         {
         }
 
+        public Student(string name, int age, int classNum) : base(name, age)
+        {
+            this.classNum = classNum;
+        }
+
         public override string Introduce()
         {
-            return $"My name is {Name}. I am {Age} years old. I am a student.";
+            return classNum == 0
+                ? $"My name is {Name}. I am {Age} years old. I am a student."
+                : $"My name is {Name}. I am {Age} years old. I am a student. I am a student of class {classNum}";
         }
     }
 }

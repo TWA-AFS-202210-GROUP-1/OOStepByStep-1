@@ -6,7 +6,7 @@ namespace OOStepByStepTest
   public class PersonTest
   {
     [Fact]
-    public void Should_print_introduction_when_introduce_given_person_Tom_21()
+    public void Should_return_introduction_when_introduce_given_person_Tom_21()
     {
       // given
       var person = new Person("Tom", 21);

@@ -2,14 +2,14 @@
 {
   public class Student : Person
   {
-    public Student(string name, int age, ClassRoom classroom)
+    public Student(string name, int age, Classroom classroom)
     {
       Name = name;
       Age = age;
       Classroom = classroom;
     }
 
-    public ClassRoom Classroom { get; set; }
+    public Classroom Classroom { get; set; }
 
     public override string Introduce()
     {

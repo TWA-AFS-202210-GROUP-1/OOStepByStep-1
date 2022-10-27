@@ -6,14 +6,13 @@ namespace OOStepByStepTest
   public class TeacherTest
   {
     [Fact]
-    public void Should_print_introduction_when_introduce_given_teacher_Amy_30()
+    public void Should_return_introduction_when_introduce_given_teacher_Amy_30()
     {
       // given
-      var class2 = new ClassRoom(2);
+      var class2 = new Classroom(2);
       var teacher = new Teacher("Amy", 30, class2);
 
       // when
-      class2.AddTeacher(teacher);
       string introduction = teacher.Introduce();
 
       // then

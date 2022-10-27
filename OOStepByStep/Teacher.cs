@@ -1,16 +1,16 @@
 ﻿namespace OOStepByStep
 {
-    public class Student : Person
+    public class Teacher : Person
     {
         private string title;
 
-        public Student()
+        public Teacher()
         {
         }
 
-        public Student(string name, int age) : base(name, age)
+        public Teacher(string name, int age) : base(name, age)
         {
-            this.title = "student";
+            this.title = "teacher";
         }
 
         public override string Print()

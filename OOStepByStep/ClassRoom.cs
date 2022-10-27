@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Xml.Linq;
+using System.Linq;
 
 namespace OOStepByStep
 {
@@ -21,31 +21,38 @@ namespace OOStepByStep
       Teacher = teacher;
     }
 
-    public string AddStudent(Student student)
+    public void AddStudent(Student student)
     {
       Students.Add(student);
-
-      return WelcomeByTeacher(student) + " " + WelcomeByStudents(student);
     }
 
-    public string WelcomeByTeacher(Student student)
+    public string ShowWelcome(Student newStudent)
     {
-      return $"My name is {Teacher.Name}. I am {Teacher.Age} years old. I am a teacher of class {ClassNumber}. Welcome {student.Name} join class {ClassNumber}.";
+      return $"{WelcomeByTeacher(newStudent)} {WelcomeByStudents(newStudent)}".Trim();
     }
 
-    public string WelcomeByStudents(Student newStudent)
+    private string WelcomeByTeacher(Student newStudent)
     {
-      string welcomeMessage = string.Empty;
+      return Teacher == null ? string.Empty : ConstructWelcomeMessage(Teacher, newStudent);
+    }
 
-      foreach (var student in students)
+    private string WelcomeByStudents(Student newStudent)
+    {
+      if (students.Count != 0)
       {
-        if (newStudent.Name != student.Name)
-        {
-          welcomeMessage += $"My name is {student.Name}. I am {student.Age} years old. I am a student of class {ClassNumber}. Welcome {newStudent.Name} join class {ClassNumber}.";
-        }
-      }
+        var welcomeMessageList = students.Where(student => newStudent.Name != student.Name).Select(student => ConstructWelcomeMessage(student, newStudent)).ToList();
 
-      return welcomeMessage;
+        return string.Join(" ", welcomeMessageList);
+      }
+      else
+      {
+        return string.Empty;
+      }
+    }
+
+    private string ConstructWelcomeMessage(Person person, Person welcomedPerson)
+    {
+      return $"My name is {person.Name}. I am {person.Age} years old. I am a {person.Profession} of class {ClassNumber}. Welcome {welcomedPerson.Name} join class {ClassNumber}.";
     }
   }
 }

@@ -7,7 +7,6 @@ namespace OOStepByStep
     {
         private string name;
         private int age;
-        protected string MyInformation { get; set; } = string.Empty;
 
         public Person(string name, int age)
         {
@@ -17,7 +16,13 @@ namespace OOStepByStep
 
         public string Introduce()
         {
-            return $"My name is {name}. I am {age} years old.{MyInformation}";
+            var roleInformation = string.Empty;
+            if (this is Teacher || this is Student)
+            {
+                roleInformation = $" I am a {GetType().Name.ToLower()}.";
+            }
+
+            return $"My name is {name}. I am {age} years old.{roleInformation}";
         }
     }
 }

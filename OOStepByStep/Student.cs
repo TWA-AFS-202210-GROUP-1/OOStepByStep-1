@@ -32,6 +32,14 @@
             }
         }
 
+        public string WelcomeNewStudent(Student newStudent)
+        {
+            return $"My name is {name}. I am {age} years old. I am a student of class {classNum}. " +
+                   $"Welcome {newStudent.Name} join class {classNum}.";
+        }
+
+        public string Name => this.name;
+
         //public void Print()
         //{
         //    Console.WriteLine("console");

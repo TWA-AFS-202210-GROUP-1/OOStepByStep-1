@@ -15,7 +15,10 @@
 
         public override string Print()
         {
-            return null;
+            var name = this.Name;
+            var age = this.Age;
+            var title = this.title;
+            return $"My name is {name}.I am {age} years old.I am a {title}.";
         }
     }
 }

@@ -16,7 +16,7 @@ namespace OOStepByStepTest
         [Fact]
         public void Should_get_name_age_and_title_when_is_a_student_if_given_name_age_and_title_as_student()
         {
-            var student = new Student();
+            var student = new Student(name: "Tom", age: 21);
             var res = student.Print();
             Assert.Equal("My name is Tom.I am 21 years old.I am a student.", res);
         }
@@ -24,9 +24,9 @@ namespace OOStepByStepTest
         [Fact]
         public void Should_get_name_age_and_title_when_is_a_teacher_if_given_name_age_and_title_as_teacher()
         {
-            var teacher = new Teacher();
+            var teacher = new Teacher(name: "Amy", age: 30);
             var res = teacher.Print();
-            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", res);
+            Assert.Equal("My name is Amy.I am 30 years old.I am a teacher.", res);
         }
 
         [Fact]

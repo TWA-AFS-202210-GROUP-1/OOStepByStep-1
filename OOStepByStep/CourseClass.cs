@@ -17,6 +17,11 @@ public class CourseClass
 
     public bool AddTeacher(Teacher teacher)
     {
+        if (classTeacher != null)
+        {
+            return false;
+        }
+
         classTeacher = teacher;
         teacher.CourseClass = this;
         return true;

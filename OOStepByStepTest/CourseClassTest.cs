@@ -20,6 +20,21 @@ namespace OOStepByStepTest
         }
 
         [Fact]
+        public void Should_return_false_when_add_teacher_given_class_has_teacher()
+        {
+            //given
+            var amy = new Teacher("Amy", 30);
+            var jane = new Teacher("Jane", 40);
+            var courseClass = new CourseClass("Class 2");
+            //when
+            courseClass.AddTeacher(amy);
+            var result = courseClass.AddTeacher(jane);
+
+            //then
+            Assert.False(result);
+        }
+
+        [Fact]
         public void Should_return_true_when_add_student_given_student_to_class()
         {
             //given

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OOStepByStep
+﻿namespace OOStepByStep
 {
   public class Student : Person
   {

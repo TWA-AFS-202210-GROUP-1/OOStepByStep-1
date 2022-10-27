@@ -2,8 +2,13 @@
 {
     public class Teacher : Person
     {
-        public Teacher(string name, int age, string occupation) : base(name, age, occupation)
+        public Teacher(string name, int age) : base(name, age)
         {
+        }
+
+        public override string Introduce()
+        {
+            return $"My name is {Name}. I am {Age} years old. I am a teacher.";
         }
     }
 }

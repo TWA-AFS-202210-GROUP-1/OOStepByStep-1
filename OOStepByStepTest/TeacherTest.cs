@@ -9,7 +9,7 @@ namespace OOStepByStepTest
         public void Should_return_teacher_information_when_introduce_give_name_and_age()
         {
             //give
-            Teacher teacher = new Teacher("Amy", 30, "teacher");
+            Teacher teacher = new Teacher("Amy", 30);
             //when
             string info = teacher.Introduce();
             //then

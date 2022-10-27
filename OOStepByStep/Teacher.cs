@@ -16,7 +16,12 @@
         {
             return classNum == 0
                 ? $"My name is {Name}. I am {Age} years old. I am a teacher."
-                : $"My name is {Name}. I am {Age} years old. I am a teacher. I am a student of class {classNum}";
+                : $"My name is {Name}. I am {Age} years old. I am a teacher of class {classNum}.";
+        }
+
+        public string Introduce(string newComerName)
+        {
+            return $"My name is {Name}. I am {Age} years old. I am a teacher of class {classNum}. Welcome {newComerName} join class {classNum}";
         }
     }
 }

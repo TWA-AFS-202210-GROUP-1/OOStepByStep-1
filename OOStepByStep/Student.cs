@@ -1,4 +1,6 @@
-﻿namespace OOStepByStep
+﻿using System.Runtime.InteropServices;
+
+namespace OOStepByStep
 {
     public class Student : Person
     {
@@ -16,7 +18,7 @@
         {
             return classNum == 0
                 ? $"My name is {Name}. I am {Age} years old. I am a student."
-                : $"My name is {Name}. I am {Age} years old. I am a student. I am a student of class {classNum}";
+                : $"My name is {Name}. I am {Age} years old. I am a student of class {classNum}.";
         }
     }
 }

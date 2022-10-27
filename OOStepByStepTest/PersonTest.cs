@@ -6,9 +6,9 @@ namespace OOStepByStepTest
     public class PersonTest
     {
         [Fact]
-        public void Should_return_information_when_introduce_give_name_and_age()
+        public void Should_return_information_when_introduce_given_name_and_age()
         {
-            //give
+            //given
             Person person = new Person("Tom", 18);
             //when
             string info = person.Introduce();

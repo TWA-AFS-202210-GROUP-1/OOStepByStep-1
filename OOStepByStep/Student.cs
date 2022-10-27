@@ -9,40 +9,25 @@
 
         public Student(string name, int age) : base(name, age)
         {
-            this.name = name;
-            this.age = age;
         }
 
         public Student(string name, int age, int classNum) : base(name, age)
         {
             this.name = name;
-            this.age = age;
             this.classNum = classNum;
         }
 
         public override string Introduce()
         {
-            if (classNum == 0)
-            {
-                return $"My name is {name}. I am {age} years old. I am a student.";
-            }
-            else
-            {
-                return $"My name is {name}. I am {age} years old. I am a student of class {classNum}.";
-            }
+            return classNum != 0 ? $"{base.Introduce()} I am a student of class {classNum}." :
+                $"{base.Introduce()} I am a student.";
         }
 
         public string WelcomeNewStudent(Student newStudent)
         {
-            return $"My name is {name}. I am {age} years old. I am a student of class {classNum}. " +
-                   $"Welcome {newStudent.Name} join class {classNum}.";
+            return $"{this.Introduce()} Welcome {newStudent.Name} join class {classNum}.";
         }
 
         public string Name => this.name;
-
-        //public void Print()
-        //{
-        //    Console.WriteLine("console");
-        //}
     }
 }

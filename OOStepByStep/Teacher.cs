@@ -9,38 +9,22 @@
 
         public Teacher(string name, int age) : base(name, age)
         {
-            this.name = name;
-            this.age = age;
         }
 
         public Teacher(string name, int age, int classNum) : base(name, age)
         {
-            this.name = name;
-            this.age = age;
             this.classNum = classNum;
         }
 
         public override string Introduce()
         {
-            if (classNum == 0)
-            {
-                return $"My name is {name}. I am {age} years old. I am a teacher.";
-            }
-            else
-            {
-                return $"My name is {name}. I am {age} years old. I am a teacher of class {classNum}.";
-            }
+            return classNum == 0 ? $"{base.Introduce()} I am a teacher." :
+                $"{base.Introduce()} I am a teacher of class {classNum}.";
         }
 
         public string WelcomeNewStudent(Student student)
         {
-            return $"My name is {name}. I am {age} years old. I am a teacher of class {classNum}. " +
-                   $"Welcome {student.Name} join class {classNum}.";
+            return $"{this.Introduce()} Welcome {student.Name} join class {classNum}.";
         }
-
-        //public void Print()
-        //{
-        //    Console.WriteLine("console");
-        //}
     }
 }

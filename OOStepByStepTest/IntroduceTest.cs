@@ -18,5 +18,19 @@ namespace OOStepByStepTest
             //then
             Assert.Equal(expectationIntroduction, studentIntroduction);
         }
+
+        [Fact]
+        public void Should_return_teacher_introduction_When_call_introduce_Given_teacher_name_age()
+        {
+            //given
+            Teacher teacher = new Teacher(name: "Amy", age: 30);
+            string expectationIntroduction = "My name is Amy. I am 30 years old. I am a teacher.";
+
+            //when
+            string studentIntroduction = teacher.Introduce();
+
+            //then
+            Assert.Equal(expectationIntroduction, studentIntroduction);
+        }
     }
 }

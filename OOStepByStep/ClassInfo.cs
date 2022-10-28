@@ -22,7 +22,7 @@ namespace OOStepByStep
                 welcomeInfo.Add(student.Introduce(newComer.Name));
             }
 
-            var result = string.Join(", ", welcomeInfo.ToArray());
+            var result = string.Join(" ", welcomeInfo.ToArray());
 
             students.Add(newComer);
             return result;

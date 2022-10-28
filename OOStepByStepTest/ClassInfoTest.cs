@@ -7,7 +7,7 @@ namespace OOStepByStepTest
     public class ClassInfoTest
     {
         [Fact]
-        public void Should_call_teacher_introduce_when_new_student_come_to_class_given_name_and_age_class()
+        public void Should_return_welcome_introduce_of_all_class_member_when_new_student_come_to_class_given_name_and_age_class()
         {
             //given
             Teacher teacher = new Teacher("Amy", 30, 2);

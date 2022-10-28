@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace OOStepByStep
 {
@@ -6,7 +7,6 @@ namespace OOStepByStep
     {
         private List<Student> students;
         private Teacher teacher;
-        private Student newComer;
         public ClassInfo(List<Student> students, Teacher teacher)
         {
             this.students = students;
@@ -15,8 +15,17 @@ namespace OOStepByStep
 
         public string AddStudent(Student newComer)
         {
+            List<string> welcomeInfo = new List<string>();
+            welcomeInfo.Add(teacher.Introduce(newComer.Name));
+            foreach (Student student in students)
+            {
+                welcomeInfo.Add(student.Introduce(newComer.Name));
+            }
+
+            var result = string.Join(", ", welcomeInfo.ToArray());
+
             students.Add(newComer);
-            return teacher.Introduce(newComer.Name);
+            return result;
         }
     }
 }

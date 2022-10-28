@@ -20,5 +20,10 @@ namespace OOStepByStep
                 ? $"My name is {Name}. I am {Age} years old. I am a student."
                 : $"My name is {Name}. I am {Age} years old. I am a student of class {classNum}.";
         }
+
+        public string Introduce(string newComerName)
+        {
+            return $"My name is {Name}. I am {Age} years old. I am a student of class {classNum}. Welcome {newComerName} join class {classNum}";
+        }
     }
 }

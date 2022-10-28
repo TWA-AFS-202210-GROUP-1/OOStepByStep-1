@@ -25,5 +25,10 @@ namespace OOStepByStep.Person
         {
             return $" Welcome {person.Name} join {person.CourseClass.ClassName}.";
         }
+
+        protected string GetClassSuffix()
+        {
+            return CourseClass != null ? $" of {CourseClass.ClassName}" : string.Empty;
+        }
     }
 }

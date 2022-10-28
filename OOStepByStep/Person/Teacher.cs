@@ -8,8 +8,7 @@ public class Teacher : Person
 
     public override string Introduce()
     {
-        var classSuffix = CourseClass != null ? $" of {CourseClass.ClassName}" : string.Empty;
-        return base.Introduce() + $" I am a teacher{classSuffix}.";
+        return base.Introduce() + $" I am a teacher{GetClassSuffix()}.";
     }
 
     public override string Welcome(Person person)

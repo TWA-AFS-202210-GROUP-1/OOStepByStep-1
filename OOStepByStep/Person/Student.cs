@@ -8,8 +8,7 @@ public class Student : Person
 
     public override string Introduce()
     {
-        var classSuffix = CourseClass != null ? $" of {CourseClass.ClassName}" : string.Empty;
-        return base.Introduce() + $" I am a student{classSuffix}.";
+        return base.Introduce() + $" I am a student{GetClassSuffix()}.";
     }
 
     public override string Welcome(Person person)
